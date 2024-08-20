@@ -22,6 +22,6 @@ module.exports = (queue, track) => {
       .setColor("#2f3136");
 
     
-    queue.metadata.channel.send({ embeds: [embed]});
+    queue.metadata.channel.send({ embeds: [embed] });
   })();
 };
