@@ -21,38 +21,7 @@ module.exports = (queue, track) => {
       })
       .setColor("#2f3136");
 
-    const back = new ButtonBuilder()
-      .setLabel(EmojiState ? emojis.back : ('Back'))
-      .setCustomId('back')
-      .setStyle('Primary');
-
-    const skip = new ButtonBuilder()
-      .setLabel(EmojiState ? emojis.skip : ('Skip'))
-      .setCustomId('skip')
-      .setStyle('Primary');
-
-    const resumepause = new ButtonBuilder()
-      .setLabel(EmojiState ? emojis.ResumePause : ('Resume & Pause'))
-      .setCustomId('resume&pause')
-      .setStyle('Danger');
-
-    const loop = new ButtonBuilder()
-      .setLabel(EmojiState ? emojis.loop : ('Loop'))
-      .setCustomId('loop')
-      .setStyle('Danger');
-
-    const lyrics = new ButtonBuilder()
-      .setLabel(await Translate("Lyrics"))
-      .setCustomId("lyrics")
-      .setStyle("Secondary");
-
-    const row1 = new ActionRowBuilder().addComponents(
-      back,
-      loop,
-      resumepause,
-      skip,
-      lyrics
-    );
+    
     queue.metadata.channel.send({ embeds: [embed], components: [row1] });
   })();
 };
